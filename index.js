@@ -61,8 +61,8 @@ let food = {
     y : Math.floor(Math.random()*15+3) * box
 }
 
-// create obstacles 1 to 5 objects;
-let obstacles = Array.from({length: getRandomInt(1, 10)})
+// create obstacles 1 to 15 objects;
+let obstacles = Array.from({length: getRandomInt(1, 15)})
 .map(()=>[getRandomInt(3, 17)*box, getRandomInt(3, 15)*box])
 .filter((item) => !(item[0] === snake[0].x && item[1] === snake[0].y))
 
