@@ -112,7 +112,6 @@ function collisionToPiedra(head, obstacles){
 
 // draw everything to the canvas
 function draw(){
-    
     ctx.drawImage(ground,0,0);
     
     for( let i = 0; i < snake.length ; i++){
@@ -129,6 +128,12 @@ function draw(){
         ctx.drawImage(piedra, obstacles[i][0], obstacles[i][1], 32, 32);
     }
     
+    // Winner
+    if(score === 2){
+        document.querySelector('#victory').style.display = "block";
+        clearInterval(game);
+    }
+
     // old head position
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
@@ -175,6 +180,7 @@ function draw(){
 
 let game = setInterval(draw, 120);
 document.querySelector('#restart').addEventListener('click', function(){
+    clearInterval(game);
     snake[0] = {
         x : 9 * box,
         y : 10 * box
