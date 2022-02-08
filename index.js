@@ -129,7 +129,7 @@ function draw(){
     }
     
     // Winner
-    if(score === 2){
+    if(score === 30){
         document.querySelector('#victory').style.display = "block";
         clearInterval(game);
     }
@@ -185,6 +185,8 @@ document.querySelector('#restart').addEventListener('click', function(){
         x : 9 * box,
         y : 10 * box
     };
+    d = null;
+    score = 0;
     food = getNewFood(obstacles)
     obstacles = Array.from({length: getRandomInt(1, 10)})
     .map(()=>[getRandomInt(3, 17)*box, getRandomInt(3, 15)*box])
