@@ -181,10 +181,7 @@ function draw(){
 let game = setInterval(draw, 120);
 document.querySelector('#restart').addEventListener('click', function(){
     clearInterval(game);
-    snake[0] = {
-        x : 9 * box,
-        y : 10 * box
-    };
+    snake = [{ x : 9 * box, y : 10 * box }];
     d = null;
     score = 0;
     food = getNewFood(obstacles)
